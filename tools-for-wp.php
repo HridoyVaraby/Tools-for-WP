@@ -57,15 +57,25 @@ define('TOOLS_FOR_WP_VERSION', '1.0.0');
 define('TOOLS_FOR_WP_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('TOOLS_FOR_WP_PLUGIN_URL', plugin_dir_url(__FILE__));
 
+// Include admin settings page
+require_once TOOLS_FOR_WP_PLUGIN_DIR . 'admin/settings-page.php';
+
 /**
  * The core plugin class
  */
-class Tools_For_WP {
+class Tools_For_WP {    
+    /**
+     * Settings instance
+     */
+    private $settings;
 
     /**
      * Initialize the plugin
      */
     public function __construct() {
+        // Initialize settings
+        $this->settings = new Tools_For_WP_Settings();
+        
         // Register scripts and styles
         add_action('wp_enqueue_scripts', array($this, 'register_assets'));
         
@@ -73,6 +83,9 @@ class Tools_For_WP {
         add_shortcode('bmi_calculator', array($this, 'bmi_calculator_shortcode'));
         add_shortcode('kg_to_pound', array($this, 'kg_to_pound_shortcode'));
         add_shortcode('km_to_miles', array($this, 'km_to_miles_shortcode'));
+        
+        // Add custom CSS to head
+        add_action('wp_head', array($this, 'add_custom_css'));
     }
 
     /**
@@ -158,6 +171,37 @@ class Tools_For_WP {
         
         // Return the buffered content
         return ob_get_clean();
+    }
+    
+    /**
+     * Add custom CSS based on settings
+     */
+    public function add_custom_css() {
+        $settings = $this->settings->get_settings();
+        
+        // Start output buffering
+        ob_start();
+        ?>
+        <style type="text/css">
+            :root {
+                --primary-color: <?php echo esc_attr($settings['primary_color']); ?>;
+                --secondary-color: <?php echo esc_attr($settings['secondary_color']); ?>;
+                --accent-color: <?php echo esc_attr($settings['accent_color']); ?>;
+                --error-color: <?php echo esc_attr($settings['error_color']); ?>;
+                --text-color: <?php echo esc_attr($settings['text_color']); ?>;
+                --border-radius: <?php echo esc_attr($settings['border_radius']); ?>;
+                --box-shadow: <?php echo esc_attr($settings['box_shadow']); ?>;
+                --transition: all 0.3s ease;
+            }
+            
+            .tools-for-wp-container {
+                font-family: '<?php echo esc_attr($settings['font_family']); ?>', sans-serif;
+            }
+        </style>
+        <?php
+        
+        // Output the buffered CSS
+        echo ob_get_clean();
     }
 }
 

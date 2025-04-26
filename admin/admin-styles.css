@@ -1,0 +1,103 @@
+/**
+ * Tools for WP - Admin Styles
+ * Styles for the plugin settings page
+ */
+
+.tools-for-wp-settings-wrap {
+    max-width: 800px;
+    margin-top: 20px;
+}
+
+.tools-for-wp-settings-wrap h1 {
+    margin-bottom: 20px;
+    color: #23282d;
+}
+
+.tools-for-wp-settings-wrap .form-table th {
+    width: 200px;
+    padding: 20px 10px 20px 0;
+}
+
+.tools-for-wp-settings-wrap .form-table td {
+    padding: 15px 10px;
+}
+
+/* Color picker styles */
+.tools-for-wp-settings-wrap .wp-picker-container {
+    display: inline-block;
+}
+
+/* Preview box */
+.tools-for-wp-preview {
+    margin-top: 30px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.tools-for-wp-preview h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.preview-box {
+    padding: 15px;
+    border-radius: var(--border-radius, 5px);
+    box-shadow: var(--box-shadow, 0 2px 5px rgba(0, 0, 0, 0.1));
+    background-color: #fff;
+    margin-bottom: 15px;
+}
+
+.preview-box .preview-title {
+    color: var(--primary-color, #007BFF);
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.preview-box .preview-text {
+    color: var(--text-color, #333333);
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.preview-box .preview-button {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: var(--primary-color, #007BFF);
+    color: #fff;
+    border: none;
+    border-radius: var(--border-radius, 5px);
+    cursor: pointer;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.preview-box .preview-button:hover {
+    opacity: 0.9;
+}
+
+/* Settings sections */
+.tools-for-wp-settings-section {
+    background: #fff;
+    border: 1px solid #ccd0d4;
+    border-radius: 4px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+}
+
+.tools-for-wp-settings-section h2 {
+    margin-top: 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+/* Help text */
+.tools-for-wp-help-text {
+    color: #666;
+    font-style: italic;
+    margin-top: 5px;
+}

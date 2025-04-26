@@ -34,17 +34,30 @@ Simply add one of the following shortcodes to any post or page:
 - Lightweight and optimized for performance
 - Easy integration via shortcodes
 - Works with any WordPress theme
-- No configuration needed
+- Customizable appearance through settings page
+
+## Customization
+
+Tools for WP includes a settings page that allows you to customize the appearance of your tools:
+
+- **Colors**: Change the primary, secondary, accent, error, and text colors to match your website's theme
+- **Fonts**: Choose from a selection of popular web fonts
+- **Border Radius**: Adjust the roundness of corners on your tools
+- **Box Shadow**: Customize the shadow effect for a flat or elevated appearance
+
+To access the settings page, go to Settings > Tools for WP in your WordPress admin dashboard.
 
 ## Design
 
-The plugin uses a modern color scheme:
+By default, the plugin uses a modern color scheme:
 - Primary Color: Blue (#007BFF)
 - Secondary Color: Light Gray (#F2F2F2)
 - Accent Color: Green (#28A745)
 - Error/Warning Color: Red (#DC3545)
 
-Typography is based on the Roboto font family from Google Fonts.
+Default typography is based on the Roboto font family from Google Fonts.
+
+All of these design elements can be customized through the settings page (Settings > Tools for WP).
 
 ## Requirements
 
