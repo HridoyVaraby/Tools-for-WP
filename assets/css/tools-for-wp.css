@@ -1,0 +1,195 @@
+/**
+ * Tools for WP - Main Stylesheet
+ * Version: 1.0.0
+ */
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+/* Variables */
+:root {
+    --primary-color: #007BFF;
+    --secondary-color: #F2F2F2;
+    --accent-color: #28A745;
+    --error-color: #DC3545;
+    --text-color: #333333;
+    --border-radius: 5px;
+    --box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+/* Base Styles */
+.tools-for-wp-container {
+    font-family: 'Roboto', sans-serif;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.tool-header {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.tool-header h3 {
+    color: var(--primary-color);
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.tool-header p {
+    color: var(--text-color);
+    font-size: 16px;
+}
+
+/* Form Styles */
+.tool-form {
+    margin-bottom: 20px;
+}
+
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -10px;
+}
+
+.form-group {
+    flex: 1;
+    padding: 0 10px;
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    font-size: 16px;
+    transition: var(--transition);
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.input-with-icon {
+    position: relative;
+}
+
+.input-with-icon .form-control {
+    padding-right: 40px;
+}
+
+.input-with-icon .input-icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #777;
+    font-size: 14px;
+}
+
+.btn {
+    display: inline-block;
+    font-weight: 500;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: 10px 20px;
+    font-size: 16px;
+    line-height: 1.5;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    width: 100%;
+}
+
+.btn-primary:hover {
+    background-color: #0069d9;
+    border-color: #0062cc;
+}
+
+/* Result Styles */
+.tool-result {
+    margin-top: 20px;
+}
+
+.result-box {
+    background-color: var(--secondary-color);
+    border-radius: var(--border-radius);
+    padding: 15px;
+    text-align: center;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.result-box h4 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.result-value {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--accent-color);
+    margin-bottom: 5px;
+}
+
+.result-category {
+    font-size: 16px;
+    color: var(--text-color);
+}
+
+/* Error Styles */
+.tool-error {
+    margin-top: 15px;
+    padding: 10px 15px;
+    background-color: #f8d7da;
+    color: var(--error-color);
+    border-radius: var(--border-radius);
+    text-align: center;
+}
+
+/* Responsive Styles */
+@media (max-width: 576px) {
+    .form-row {
+        flex-direction: column;
+    }
+    
+    .form-group {
+        flex: 0 0 100%;
+    }
+    
+    .tool-header h3 {
+        font-size: 20px;
+    }
+    
+    .result-value {
+        font-size: 20px;
+    }
+}
