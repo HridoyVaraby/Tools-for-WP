@@ -1,14 +1,29 @@
+<?php
 /**
  * Tools for WP - Main Stylesheet
  * Version: 1.0.0
+ * 
+ * This stylesheet includes dynamic styles based on WordPress admin settings
  */
+header('Content-Type: text/css');
+?>
+
+<?php if (function_exists('get_option')) { ?>
+<style>
+:root {
+    --primary-color: <?php echo get_option('tools_for_wp_primary_color', '#007BFF'); ?>;
+    --font-family: <?php echo get_option('tools_for_wp_font_family', '"Roboto", sans-serif'); ?>;
+}
+</style>
+<?php } ?>
+
 
 /* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+@import url('<?php echo get_option('tools_for_wp_google_font', 'https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap'); ?>');
 
 /* Variables */
 :root {
-    --primary-color: #007BFF;
+    --primary-color: <?php echo get_option('tools_for_wp_primary_color', '#007BFF'); ?>;
     --secondary-color: #F2F2F2;
     --accent-color: #28A745;
     --error-color: #DC3545;
@@ -20,7 +35,7 @@
 
 /* Base Styles */
 .tools-for-wp-container {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family, 'Roboto', sans-serif);
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;
